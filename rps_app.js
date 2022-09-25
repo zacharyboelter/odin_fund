@@ -69,7 +69,7 @@ function playRound(playerSelection, computerSelection) {
 }
 
 //function to end game
-function win_condition() {
+function winCondition() {
     if (playerScore < computerScore) {
       return 'Computer Wins!';
     } else {
