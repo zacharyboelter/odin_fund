@@ -11,6 +11,22 @@ function getComputerChoice(){
     } else {
         computerChoice = 'scissors'
     }
-    console.log(computerChoice)
+    return computerChoice
 }
-getComputerChoice()
+
+
+function playRound(playerSelection, computerSelection) {
+    if (playerSelection == computerSelection){
+        return 'Its a tie!'
+    } else if (playerSelection == 'rock' && computerSelection == 'scissors') {
+        return 'Rock smashed scissors, Player wins!'
+    } else if( playerSelection == 'rock' && computerSelection == 'paper'){
+        return 'Paper wrapped rock, Computer wins this round!'
+    }
+    console.log(computerSelection)
+  }
+   
+  const playerSelection = 'rock'
+  const computerSelection = getComputerChoice()
+  console.log(playRound(playerSelection, computerSelection))
+  
