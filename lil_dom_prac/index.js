@@ -24,9 +24,32 @@ p.textContent = 'Me too!'
 newDiv.appendChild(h1)
 newDiv.appendChild(p)
 
-
-
-
-
-
 container.appendChild(newDiv)
+
+// const btn = document.querySelector('#btn');
+// btn.onclick = () => alert("Hello World");
+
+// const bttn = document.querySelector('#btn');
+// btn.addEventListener('click', alertFunction);
+// function alertFunction() {
+//     alert("YAY! YOU DID IT!");
+//   }
+// btn.addEventListener('click', () => {
+//   alert("Hello World");
+// });
+
+// btn.addEventListener('click', function (e) {
+//     console.log(e.target);
+//   });
+
+// btn.addEventListener('click', function (e) {
+//     e.target.style.background = 'blue';
+// });
+
+const buttons = document.querySelectorAll('button')
+
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+        alert(button.id)
+    })
+})
