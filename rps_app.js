@@ -79,3 +79,5 @@ function winCondition() {
 
 
 console.log(game())
+
+//come back and update with a GUI
