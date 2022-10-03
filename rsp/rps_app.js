@@ -58,33 +58,41 @@ function playRound(playerSelection, computerSelection) {
             message.textContent = 'Its a tie!'
         }
         //if player chose rock
+    
         if (playerSelection == 'rock' && computerSelection == 'scissors') {
             message.textContent = 'Rock smashed scissors, Player wins!'
             playerScore += 1
+            playerScoreSpan.textContent = `${playerScore}`
         } else if (playerSelection == 'rock' && computerSelection == 'paper') {
             message.textContent = 'Paper wrapped rock, Computer wins this round!'
             computerScore += 1
+            computerScoreSpan.textContent = `${computerScore}`
+
         }
         //if player chose paper
         if (playerSelection == 'paper' && computerSelection == 'scissors') {
             message.textContent = 'Scissors cuts paper, Computer wins.'
             computerScore += 1
+            computerScoreSpan.textContent = `${computerScore}`
         } else if (playerSelection == 'paper' && computerSelection == 'rock') {
             message.textContent = 'Paper beats rock, Player wins'
             playerScore += 1
+            playerScoreSpan.textContent = `${playerScore}`
         }
         //if player chose scissors
         if (playerSelection == 'scissors' && computerSelection == 'rock') {
             message.textContent = 'Scissors loses to rock, Computer wins.'
             computerScore += 1
+            computerScoreSpan.textContent = `${computerScore}`
+
         } else if (playerSelection == 'scissors' && computerSelection == 'paper') {
             message.textContent = 'Paper loses to scissors, Player wins'
             playerScore += 1
+            playerScoreSpan.textContent = `${playerScore}`
         }
         winCondition()
         return message
-        playerScoreSpan.textContent = playerScore
-        computerScoreSpan.textContent = computerScore
+
     }
 
 }
