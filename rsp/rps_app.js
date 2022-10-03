@@ -80,5 +80,3 @@ function winCondition() {
 
 console.log(game())
 
-
-//is this new branch working?
