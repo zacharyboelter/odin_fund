@@ -80,6 +80,5 @@ function winCondition() {
 
 console.log(game())
 
-//come back and update with a GUI
 
 //is this new branch working?
