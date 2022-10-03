@@ -6,21 +6,11 @@ const possibleChoices = document.querySelectorAll('button')
 const resetContainer = document.getElementsByClassName('reset-btn-cointainer')
 const resetBtn = document.getElementById('reset')
 
-
-
-let playerChoice
-let computerChoice
-// function game(){
-//     while(playerScore < 5 && computerScore < 5){
-//         playRound(playerSelection, computerSelection)
-//         console.log(`Player: ${playerScore}, Computer: ${computerScore}`)
-//     }
-//     winCondition()
-// }
-
 let playerScore = 0
 let computerScore = 0
 
+playerScoreSpan.textContent = `0`
+computerScoreSpan.textContent = `0`
 
 resetBtn.addEventListener('click',() => location.reload())
 
@@ -51,13 +41,13 @@ possibleChoices.forEach(possibleChoice => possibleChoice.addEventListener('click
 
 
 function playRound(playerSelection, computerSelection) {
-   
-    while (playerScore < 5 && computerScore < 5) {
 
+    while (playerScore < 5 && computerScore < 5) {
+        
         message.textContent = ''
         //if tie
         if (playerSelection == computerSelection) {
-            message.textContent = 'Its a tie!'
+            message.textContent = `Its a tie! You both picked ${playerSelection}`
         }
         //if player chose rock
     
@@ -101,19 +91,14 @@ function playRound(playerSelection, computerSelection) {
 function winCondition() {
     if (playerScore < computerScore) {
         message.textContent = 'Computer Wins! Game Over.'
+        return
     } else {
         message.textContent = 'Player Wins! Game Over.'
+        return
     }
-
 
 }
 
-// function getPlayerChoice(e){
-//     let playerSelection = (e.target.id)
-//     playerChoice = e.target.textContent
-//     playRound(playerSelection, getComputerChoice())
-
-// }
 
 
 
