@@ -3,6 +3,8 @@ const playerScoreSpan = document.getElementById('player-score')
 const computerScoreSpan = document.getElementById('computer-score')
 const message = document.getElementById('message')
 const possibleChoices = document.querySelectorAll('button')
+const resetContainer = document.getElementsByClassName('reset-btn-cointainer')
+const resetBtn = document.getElementById('reset')
 
 
 
@@ -20,7 +22,7 @@ let playerScore = 0
 let computerScore = 0
 
 
-
+resetBtn.addEventListener('click',() => location.reload())
 
 function getComputerChoice() {
     randomChoice = Math.floor(Math.random() * 3) + 1
@@ -90,20 +92,19 @@ function playRound(playerSelection, computerSelection) {
             playerScore += 1
             playerScoreSpan.textContent = `${playerScore}`
         }
-        winCondition()
         return message
-
     }
-
+    winCondition()
 }
 
 
 function winCondition() {
     if (playerScore < computerScore) {
-        console.log('Computer Wins!')
+        message.textContent = 'Computer Wins! Game Over.'
     } else {
-        console.log('Player Wins')
+        message.textContent = 'Player Wins! Game Over.'
     }
+
 
 }
 
