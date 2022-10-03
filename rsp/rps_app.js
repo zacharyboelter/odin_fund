@@ -1,18 +1,20 @@
 const rock = document.getElementById('rock-btn')
 const paper = document.getElementById('paper-btn')
 const scissors = document.getElementById('scissor-btn')
-const playerScore = document.getElementById('player-score')
-const computerScore = document.getElementById('computer-score')
+const playerScoreSpan = document.getElementById('player-score')
+const computerScoreSpan = document.getElementById('computer-score')
 
+let playerScore = 0
+let computerScore = 0
 
-playerScore.textContent = 0
-computerScore.textContent = 0
+playerScoreSpan.textContent = playerScore
+computerScoreSpan.textContent = computerScore
 
 
 function game(){
     while(playerScore < 3 && computerScore < 3){
 
-        let playerSelection = prompt('Weapon of choice?')
+        // let playerSelection = prompt('Weapon of choice?')
         let computerSelection = getComputerChoice()
         playerSelection = playerSelection.toLowerCase()
 
@@ -81,5 +83,9 @@ function winCondition() {
     
 }
 
+function getPlayerChoice(e){
+    let playerSelection = (e.target.id)
+    
+}
 
 game()
