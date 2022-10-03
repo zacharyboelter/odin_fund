@@ -1,8 +1,12 @@
+const rock = document.getElementById('rock-btn')
+const paper = document.getElementById('paper-btn')
+const scissors = document.getElementById('scissor-btn')
+const playerScore = document.getElementById('player-score')
+const computerScore = document.getElementById('computer-score')
 
 
-
-let playerScore = 0
-let computerScore = 0
+playerScore.textContent = 0
+computerScore.textContent = 0
 
 
 function game(){
