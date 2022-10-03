@@ -1,28 +1,41 @@
-const rock = document.getElementById('rock-btn')
-const paper = document.getElementById('paper-btn')
-const scissors = document.getElementById('scissor-btn')
+
 const playerScoreSpan = document.getElementById('player-score')
 const computerScoreSpan = document.getElementById('computer-score')
+const message = document.getElementById('message')
+const possibleChoices = document.querySelectorAll('button')
+
 
 let playerScore = 0
 let computerScore = 0
+let playerChoice
+let computerChoice
 
 playerScoreSpan.textContent = playerScore
 computerScoreSpan.textContent = computerScore
 
 
-function game(){
-    while(playerScore < 3 && computerScore < 3){
 
-        // let playerSelection = prompt('Weapon of choice?')
-        let computerSelection = getComputerChoice()
-        playerSelection = playerSelection.toLowerCase()
 
-        alert(playRound(playerSelection, computerSelection))
-        console.log(`Player: ${playerScore}, Computer: ${computerScore}`)
-    }
-    winCondition()
-}
+possibleChoices.forEach(possibleChoice => possibleChoice.addEventListener('click', (e) => {
+    userChoice = e.target.id
+    message.innerHTML = `${userChoice}`
+    getComputerChoice()
+    playRound()
+  }))
+
+
+
+
+// function game(){
+//     while(playerScore < 5 && computerScore < 5){
+
+        
+
+//         playRound(playerSelection, computerSelection)
+//         console.log(`Player: ${playerScore}, Computer: ${computerScore}`)
+//     }
+//     winCondition()
+// }
 
 
 function getComputerChoice(){
@@ -41,36 +54,39 @@ function getComputerChoice(){
 
 
 function playRound(playerSelection, computerSelection) {
-    let message = ''
+
+    
+    
+    message.textContent = ''
     //if tie
     if (playerSelection == computerSelection){
-        message = 'Its a tie!'
+        message.textContent = 'Its a tie!'
     } 
     //if player chose rock
     if (playerSelection == 'rock' && computerSelection == 'scissors') {
-        message = 'Rock smashed scissors, Player wins!'
+        message.textContent = 'Rock smashed scissors, Player wins!'
         playerScore += 1
     } else if( playerSelection == 'rock' && computerSelection == 'paper'){
-        message = 'Paper wrapped rock, Computer wins this round!'
+        message.textContent = 'Paper wrapped rock, Computer wins this round!'
         computerScore += 1
     }
     //if player chose paper
     if (playerSelection == 'paper' && computerSelection == 'scissors') {
-        message = 'Scissors cuts paper, Computer wins.'
+        message.textContent = 'Scissors cuts paper, Computer wins.'
         computerScore += 1
     } else if (playerSelection == 'paper' && computerSelection == 'rock'){
-        message = 'Paper beats rock, Player wins'
+        message.textContent = 'Paper beats rock, Player wins'
         playerScore += 1
     }
     //if player chose scissors
     if (playerSelection == 'scissors' && computerSelection == 'rock') {
-        message = 'Scissors loses to rock, Computer wins.'
+        message.textContent = 'Scissors loses to rock, Computer wins.'
         computerScore += 1
     } else if (playerSelection == 'scissors' && computerSelection == 'paper'){
-        message = 'Paper loses to scissors, Player wins'
+        message.textContent = 'Paper loses to scissors, Player wins'
         playerScore += 1
     }
-    return message 
+    return message.textContent 
 }
 
 
@@ -83,9 +99,13 @@ function winCondition() {
     
 }
 
-function getPlayerChoice(e){
-    let playerSelection = (e.target.id)
-    
-}
+// function getPlayerChoice(e){
+//     let playerSelection = (e.target.id)
+//     playerChoice = e.target.textContent
+//     playRound(playerSelection, getComputerChoice())
 
-game()
+// }
+
+
+
+
