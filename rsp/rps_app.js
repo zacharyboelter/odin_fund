@@ -6,7 +6,7 @@ let computerScore = 0
 
 
 function game(){
-    while(playerScore <= 2 && computerScore <= 2){
+    while(playerScore < 3 && computerScore < 3){
 
         let playerSelection = prompt('Weapon of choice?')
         let computerSelection = getComputerChoice()
@@ -15,7 +15,7 @@ function game(){
         alert(playRound(playerSelection, computerSelection))
         console.log(`Player: ${playerScore}, Computer: ${computerScore}`)
     }
-    alert(win_condition())
+    winCondition()
 }
 
 
@@ -70,13 +70,12 @@ function playRound(playerSelection, computerSelection) {
 
 function winCondition() {
     if (playerScore < computerScore) {
-      return 'Computer Wins!';
+        console.log('Computer Wins!')
     } else {
-        return 'Player Wins'
+        console.log('Player Wins')
     }
     
 }
 
 
-console.log(game())
-
+game()
