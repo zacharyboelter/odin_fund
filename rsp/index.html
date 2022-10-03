@@ -6,10 +6,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./styles.css">
 </head>
 
 <body>
-    <h1>Rock, Papper, Scissors</h1>
+    <h1 class="title">Rock, Paper, Scissors</h1>
+    <div class="buttons-container">
+        <button id='rock' class="btn">🪨 Rock</button>
+        <button id="paper" class="btn">📜 Paper</button>
+        <button id="scissors" class="btn">✂️ Scissors</button>
+    </div>
+    <div class="score-container">
+        <h2>Player: <span id="player-score"></span> </h2>
+        <h2>Computer: <span id="computer-score"></span></h2>
+    </div>
+    <div class="message-container">
+        <p id="message" class="message"></p>
+    </div>
+
 
     <script src="./rps_app.js"></script>
 </body>
